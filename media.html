@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media - Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { background:#111; color:#eee; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; }
+    .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background:#1c1c1c; }
+    .navbar .brand img { height:40px; margin-right:10px; vertical-align:middle; }
+    .navbar a { color:#eee; text-decoration:none; margin-left:15px; transition:0.3s; }
+    .navbar a:hover, .navbar a.active { color:#1e90ff; }
+    
+    .hero { background:url('banner7.png') no-repeat center center; background-size:cover; height:70vh; display:flex; align-items:center; justify-content:center; }
+    
+    section { padding:40px 20px; max-width:1200px; margin:20px auto; background:#1c1c1c; border-radius:10px; box-shadow:0 2px 4px rgba(0,0,0,0.6); }
+    h2 { font-size:2rem; margin-bottom:20px; text-align:center; color:#A2CFFE; }
+    
+    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px; }
+    .gallery-card { cursor:pointer; overflow:hidden; border-radius:12px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .gallery-card img { width:100%; height:200px; object-fit:cover; display:block; }
+    .gallery-card:hover { transform:scale(1.05); box-shadow:0 6px 18px rgba(0,0,0,0.3); }
+
+    /* Modal */
+    .modal { display:none; position:fixed; z-index:999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); overflow:auto; padding-top:60px; }
+    .modal-content { margin:auto; display:block; max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+    .close { position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer; transition:0.3s; }
+    .close:hover { color:#1e90ff; }
+
+    /* Video Section */
+    .video-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .video-card { position:relative; }
+    .video-card iframe { width:320px; height:180px; border-radius:12px; }
+    .video-card p { position:absolute; bottom:10px; left:50%; transform:translateX(-50%); color:#fff; background:rgba(0,0,0,0.5); padding:4px 10px; border-radius:6px; font-size:0.9rem; }
+	
+	.gallery-grid iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.gallery-grid .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+
+    /* Elegant Button */
+    .elegant-button { display:block; margin:20px auto; padding:15px 30px; font-size:1.2rem; font-weight:bold; color:#fff; border:none; border-radius:50px; background:linear-gradient(45deg,#1e90ff,#5aabff); cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.3); transition:0.3s; }
+    .elegant-button:hover { background:linear-gradient(45deg,#5aabff,#1e90ff); box-shadow:0 6px 15px rgba(0,0,0,0.5); }
+
+    /* Scroll-to-top */
+    #scrollTopBtn { position:fixed; right:30px; bottom:100px; font-size:22px; background-color:#1e90ff; color:white; border:none; cursor:pointer; padding:15px; border-radius:50%; opacity:0; visibility:hidden; transition:0.4s; z-index:100; }
+    #scrollTopBtn.show { opacity:1; visibility:visible; }
+    #scrollTopBtn:hover { background:#5aabff; transform:scale(1.1); }
+
+    /* Footer & Ticker */
+    footer { text-align:center; padding:15px 0; background:#1c1c1c; color:#eee; margin-top:40px; }
+    .floating-ticker { width:100%; background:#222; color:#fff; padding:8px 0; text-align:center; font-style:italic; }
+    .social-container { text-align:center; margin-top:10px; }
+    .social-container a { color:#eee; margin:0 10px; font-size:1.2rem; transition:0.3s; }
+    .social-container a:hover { color:#1e90ff; }
+
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="brand"><img src="logo.png" alt="Logo">Cornerstone Faith Soul Ministry</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="resources.html" class="active">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="contact.html">Contact</a>
+    <a href="support.html">Give / Support</a>
+  </div>
+</div>
+
+<div class="hero"></div>
+
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+  <span class="close" onclick="closeVideoModal()">&times;</span>
+  <iframe id="modalVideo" width="80%" height="480" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Video Grid -->
+<section>
+  <h2>Past Videos</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card" onclick="openVideoModal('https://www.youtube.com/embed/PWUPr89W3cU')">
+      <iframe src="https://www.youtube.com/embed/PWUPr89W3cU" frameborder="0"></iframe>
+      <p class="caption">White Tiger Documentary</p>
+    </div>
+    <div class="gallery-card" onclick="openVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"></iframe>
+      <p class="caption">Sunday Worship</p>
+    </div>
+    <div class="gallery-card" onclick="openVideoModal('https://www.youtube.com/embed/VIDEO_ID')">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"></iframe>
+      <p class="caption">Special Service</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Gallery Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Gallery Grid -->
+<section>
+  <h2>Photo Gallery</h2>
+  <div class="gallery-grid">
+    <!-- 37 Images -->
+    <div class="gallery-card" onclick="openModal('im1.jpg')"><img src="im1.jpg" alt="Gallery Image 1"></div>
+    <div class="gallery-card" onclick="openModal('im2.jpg')"><img src="im2.jpg" alt="Gallery Image 2"></div>
+    <div class="gallery-card" onclick="openModal('im3.jpg')"><img src="im3.jpg" alt="Gallery Image 3"></div>
+    <div class="gallery-card" onclick="openModal('im4.jpg')"><img src="im4.jpg" alt="Gallery Image 4"></div>
+    <div class="gallery-card" onclick="openModal('im5.jpg')"><img src="im5.jpg" alt="Gallery Image 5"></div>
+    <div class="gallery-card" onclick="openModal('im6.jpg')"><img src="im6.jpg" alt="Gallery Image 6"></div>
+    <div class="gallery-card" onclick="openModal('im7.jpg')"><img src="im7.jpg" alt="Gallery Image 7"></div>
+    <div class="gallery-card" onclick="openModal('im8.jpg')"><img src="im8.jpg" alt="Gallery Image 8"></div>
+    <div class="gallery-card" onclick="openModal('im9.jpg')"><img src="im9.jpg" alt="Gallery Image 9"></div>
+    <div class="gallery-card" onclick="openModal('im10.jpg')"><img src="im10.jpg" alt="Gallery Image 10"></div>
+    <div class="gallery-card" onclick="openModal('im11.jpg')"><img src="im11.jpg" alt="Gallery Image 11"></div>
+    <div class="gallery-card" onclick="openModal('im12.jpg')"><img src="im12.jpg" alt="Gallery Image 12"></div>
+    <div class="gallery-card" onclick="openModal('im13.jpg')"><img src="im13.jpg" alt="Gallery Image 13"></div>
+    <div class="gallery-card" onclick="openModal('im14.jpg')"><img src="im14.jpg" alt="Gallery Image 14"></div>
+    <div class="gallery-card" onclick="openModal('im15.jpg')"><img src="im15.jpg" alt="Gallery Image 15"></div>
+    <div class="gallery-card" onclick="openModal('im16.jpg')"><img src="im16.jpg" alt="Gallery Image 16"></div>
+    <div class="gallery-card" onclick="openModal('im17.jpg')"><img src="im17.jpg" alt="Gallery Image 17"></div>
+    <div class="gallery-card" onclick="openModal('im18.jpg')"><img src="im18.jpg" alt="Gallery Image 18"></div>
+    <div class="gallery-card" onclick="openModal('im19.jpg')"><img src="im19.jpg" alt="Gallery Image 19"></div>
+    <div class="gallery-card" onclick="openModal('im20.jpg')"><img src="im20.jpg" alt="Gallery Image 20"></div>
+    <div class="gallery-card" onclick="openModal('im21.jpg')"><img src="im21.jpg" alt="Gallery Image 21"></div>
+    <div class="gallery-card" onclick="openModal('im22.jpg')"><img src="im22.jpg" alt="Gallery Image 22"></div>
+    <div class="gallery-card" onclick="openModal('im23.jpg')"><img src="im23.jpg" alt="Gallery Image 23"></div>
+    <div class="gallery-card" onclick="openModal('im24.jpg')"><img src="im24.jpg" alt="Gallery Image 24"></div>
+    <div class="gallery-card" onclick="openModal('im25.jpg')"><img src="im25.jpg" alt="Gallery Image 25"></div>
+    <div class="gallery-card" onclick="openModal('im26.jpg')"><img src="im26.jpg" alt="Gallery Image 26"></div>
+    <div class="gallery-card" onclick="openModal('im27.jpg')"><img src="im27.jpg" alt="Gallery Image 27"></div>
+    <div class="gallery-card" onclick="openModal('im28.jpg')"><img src="im28.jpg" alt="Gallery Image 28"></div>
+    <div class="gallery-card" onclick="openModal('im29.jpg')"><img src="im29.jpg" alt="Gallery Image 29"></div>
+    <div class="gallery-card" onclick="openModal('im30.jpg')"><img src="im30.jpg" alt="Gallery Image 30"></div>
+    <div class="gallery-card" onclick="openModal('im31.jpg')"><img src="im31.jpg" alt="Gallery Image 31"></div>
+    <div class="gallery-card" onclick="openModal('im32.jpg')"><img src="im32.jpg" alt="Gallery Image 32"></div>
+    <div class="gallery-card" onclick="openModal('im33.jpg')"><img src="im33.jpg" alt="Gallery Image 33"></div>
+    <div class="gallery-card" onclick="openModal('im34.jpg')"><img src="im34.jpg" alt="Gallery Image 34"></div>
+    <div class="gallery-card" onclick="openModal('im35.jpg')"><img src="im35.jpg" alt="Gallery Image 35"></div>
+    <div class="gallery-card" onclick="openModal('im36.jpg')"><img src="im36.jpg" alt="Gallery Image 36"></div>
+    <div class="gallery-card" onclick="openModal('im37.jpg')"><img src="im37.jpg" alt="Gallery Image 37"></div>
+  </div>
+</section>
+
+<!-- Back Button -->
+<button class="elegant-button" onclick="window.history.back()">Back</button>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+
+<!-- Footer -->
+<div class="floating-ticker">
+  "Your word is a lamp to my feet and a light to my path." – Psalm 119:105
+</div>
+<div class="social-container">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+
+
+<footer>
+  &copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.
+</footer>
+
+<script>
+  // Modal Functions
+  function openModal(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imageModal').style.display = 'block';
+  }
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+
+  // Scroll-to-top
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.onscroll = function() {
+    if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+      scrollBtn.classList.add('show');
+    } else { scrollBtn.classList.remove('show'); }
+  }
+  function scrollToTop() { window.scrollTo({top:0, behavior:'smooth'}); }
+  
+  function openVideoModal(src) {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('modalVideo');
+  iframe.src = src + "?autoplay=1";
+  modal.style.display = 'block';
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('modalVideo');
+  iframe.src = ""; // stop video
+  modal.style.display = 'none';
+}
+</script>
+
+</body>
+</html>

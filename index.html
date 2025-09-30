@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* General Dark Theme */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0b0b0d;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover { color: #A2CFFE; }
+    .navbar .brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #A2CFFE;
+    }
+    .navbar img { height: 40px; margin-right: 10px; }
+
+    /* Hero Section */
+    .hero {
+      background: url('banner.png') no-repeat center center;
+      background-size: contain;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-color: #89cfff; /* fallback */
+    }
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero-overlay p { font-size: 1.2rem; }
+    .hero-overlay a {
+      background: #A2CFFE;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* Content Sections */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      color: #eee;
+    }
+
+    .card {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      min-width: 300px;
+    }
+    .card h1 { color: #A2CFFE; margin-bottom: 1rem; }
+    .card p { line-height: 1.6; }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .caption-container { text-align: center; margin: 20px 0; }
+    h2, h3 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    p { font-size: 1.2em; margin-bottom: 20px; text-align: center; }
+
+    /* Buttons */
+    .cta-button {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      padding: 10px;
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover { background-color: #5aabff; }
+    .elegant-button {
+      background: linear-gradient(45deg, #1e90ff, #5aabff);
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 15px 30px;
+      transition: all 0.3s ease;
+    }
+    .elegant-button:hover {
+      background: linear-gradient(45deg, #5aabff, #1e90ff);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+   /* Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;         /* always fixed on screen */
+  right: 30px;             /* 30px from the right edge */
+  bottom: 100px;           /* sits above footer area */
+  font-size: 22px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;              /* start hidden */
+  visibility: hidden;      /* prevents ghost clicks */
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover {
+  background-color: #5aabff;
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+#scrollTopBtn .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px;
+  position: absolute;
+  right: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9em;
+}
+#scrollTopBtn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+    /* Footer */
+    footer {
+      background: #0b0b0d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    /* Social media */
+    .social-container {
+      background: #0b0b0d;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .social-container a {
+      color: #A2CFFE;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-container a:hover {
+      color: #fff;
+      transform: scale(1.2);
+    }
+
+    /* Floating Ticker */
+    .floating-ticker {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #0b0b0d, #1c1c1c, #0b0b0d);
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      padding: 0.6rem 0;
+      z-index: 9999;
+      border-top: 2px solid #A2CFFE;
+      border-bottom: 2px solid #A2CFFE;
+      box-shadow: 0 0 12px rgba(162, 207, 254, 0.7);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    .floating-ticker .ticker {
+      display: inline-block;
+      color: #A2CFFE;
+      font-style: italic;
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(162, 207, 254, 0.8);
+      animation: scroll-left 15s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(162, 207, 254, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(162, 207, 254, 1); }
+    }
+  </style>
+</head>
+<body>
+ <div class="navbar">
+  <div class="brand">
+    <img src="logo.png" alt="Logo">
+    Cornerstone Faith Soul Ministry
+  </div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="contact.html">Contact</a>
+    <a href="support.html">Give / Support</a>
+  </div>
+</div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>Repent and Believe the Good News</h1>
+      <p>Altar of Fire – Daily Livestream</p>
+      <a href="https://facebook.com">Join Livestream</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <section>
+      <div class="card">
+        <h1>Welcome To The Cornerstone Faith Soul Ministry</h1>
+        <p>
+          Welcome to Cornerstone Faith Soul Ministry — a Christ-centered ministry dedicated to prayer,
+          care, and the proclamation of the Gospel. We exist to glorify God by gathering in prayer,
+          visiting and counseling those in need, equipping church leaders for effective service, and
+          spreading the Good News of Jesus Christ. Our vision is to see lives transformed, leaders
+          strengthened, and communities renewed for God’s Kingdom. 
+          <strong>“Let’s make it real! – Cares to Share.”</strong>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="video-container">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/Nhk_5c6H-yc?si=LjWMSdzZIXfLYKjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="caption-container">
+        <h3>"Where Faith Ignites Hope and Love."</h3>
+        <p>Click below to view more revival videos</p>
+        <button class="cta-button elegant-button" onclick="goToPage('resources.html')">Explore Ministry</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scroll-to-top button (only one now) -->
+  <button onclick="scrollToTop()" id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+    <span class="tooltip">Back to top</span>
+  </button>
+
+  <footer>
+    <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
+  </footer>
+
+  <div class="floating-ticker">
+    <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+  </div>
+
+  <!-- Social Media Section -->
+  <div class="social-container">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <!-- JS -->
+  <script>
+  let scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", function() {
+  if (document.documentElement.scrollTop > 200) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events - Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+ .hero {
+  background: url('banner6.png') no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-color: transparent; /* fixed */
+}
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero-overlay p { font-size: 1.2rem; }
+    .hero-overlay a {
+      background: #A2CFFE;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+	/* Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;         /* always fixed on screen */
+  right: 30px;             /* 30px from the right edge */
+  bottom: 100px;           /* sits above footer area */
+  font-size: 22px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;              /* start hidden */
+  visibility: hidden;      /* prevents ghost clicks */
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover {
+  background-color: #5aabff;
+  transform: scale(1.1);
+}
+
+#scrollTopBtn .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px;
+  position: absolute;
+  right: 110%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9em;
+}
+#scrollTopBtn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+</style>
+<body>
+  
+<div class="navbar">
+  <div class="brand">
+    <img src="logo.png" alt="Logo">
+    Cornerstone Faith Soul Ministry
+  </div>
+  
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ministries.html">Ministries</a>
+    <a href="resources.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="contact.html">Contact</a>
+    <a href="support.html">Give / Support</a>
+  </div>
+</div>
+
+<div class="hero"></div>
+</div>
+
+  
+<div class="container">
+  <div class="card"><h2>Event Calendar</h2><p>Upcoming events with dates and details.</p></div>
+  <div class="card"><h2>Registration</h2><p>Sign up to attend upcoming events.</p></div>
+  <div class="card"><h2>Highlights</h2><p>Recap of past events and testimonies.</p></div>
+</div>
+
+  
+<footer>
+  <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
+</footer>
+
+<div class="floating-ticker">
+  <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+</div>
+
+<div class="social-container">
+  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+ <script>
+    let scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", function() {
+      if (document.documentElement.scrollTop > 200) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    .navbar {
+      background-color: #0b0b0d;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover { color: #A2CFFE; }
+    .navbar .brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #A2CFFE;
+    }
+    .navbar img { height: 40px; margin-right: 10px; }
+
+    .hero {
+      background: url('banner3.png') no-repeat center center;
+      background-size: cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero-overlay p { font-size: 1.2rem; }
+    .hero-overlay a {
+      background: #A2CFFE;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+	
+	 section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+      background: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+      color: #eee;
+    }
+
+    .card {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      min-width: 300px;
+    }
+    .card h2 { color: #A2CFFE; margin-bottom: 1rem; }
+    .card p { line-height: 1.6; }
+
+	
+	.mission-list {
+  text-align: left;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.mission-list li {
+  margin-bottom: 0.8rem;
+}
+	
+	.value-line {
+  display: block;
+  margin-bottom: 1rem; /* adds space between lines */
+}
+.value-list {
+  padding-left: 1.2rem; /* indent bullets */
+  line-height: 1.8;     /* space between lines */
+}
+.value-list li {
+  margin-bottom: 0.8rem; /* extra spacing for each bullet */
+}
+
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      flex: 1 1 400px;
+      min-width: 300px;
+    }
+    .card h2, .card h1 {
+      text-align: center;
+      color: #A2CFFE;
+      margin-bottom: 1rem;
+    }
+    .card p { line-height: 1.6; }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      font-size: 22px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+    #scrollTopBtn.show { opacity: 1; visibility: visible; }
+    #scrollTopBtn:hover { background-color: #5aabff; transform: scale(1.1); }
+    #scrollTopBtn .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    #scrollTopBtn:hover .tooltip { visibility: visible; opacity: 1; }
+
+    footer {
+      background: #0b0b0d;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .social-container {
+      background: #0b0b0d;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .social-container a {
+      color: #A2CFFE;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-container a:hover { color: #fff; transform: scale(1.2); }
+
+    .floating-ticker {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #0b0b0d, #1c1c1c, #0b0b0d);
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      padding: 0.6rem 0;
+      z-index: 9999;
+      border-top: 2px solid #A2CFFE;
+      border-bottom: 2px solid #A2CFFE;
+      box-shadow: 0 0 12px rgba(162, 207, 254, 0.7);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    .floating-ticker .ticker {
+      display: inline-block;
+      color: #A2CFFE;
+      font-style: italic;
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(162, 207, 254, 0.8);
+      animation: scroll-left 15s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(162, 207, 254, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(162, 207, 254, 1); }
+    }
+
+    /* Profile Cards */
+    .profile-card {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      padding: 1.5rem;
+      margin: 1rem;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .profile-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .profile-card h3 { color: #A2CFFE; margin-bottom: 0.5rem; }
+    .profile-card .role { font-style: italic; color: #ccc; margin-bottom: 1rem; }
+    .profile-card .view-more-btn {
+      background: #A2CFFE;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      color: black;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: transform 0.2s;
+    }
+    .profile-card .view-more-btn:hover { transform: scale(1.05); }
+
+.leadership-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.section-heading {
+  color: #A2CFFE;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.leadership-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #1c1c1c;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      color: #f1f1f1;
+      position: relative;
+    }
+    .modal-content img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .modal-content h3 { color: #A2CFFE; margin-bottom: 0.5rem; }
+    .modal-content .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #A2CFFE;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .modal-content .close:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .hero-overlay h1 { font-size: 2rem; }
+      .hero-overlay p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="brand">
+      <img src="logo.png" alt="Logo">
+      Cornerstone Faith Soul Ministry
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="support.html">Give / Support</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    
+  </div>
+
+  <!-- Mission & Vision -->
+  <main>
+  <!-- ===========================
+     ORIGINAL CARDS
+=========================== -->
+<section class="mission-section">
+  <h2 class="section-heading">Our Mission & Vision</h2>
+  <div class="container mission-container">
+    <div class="card">
+      <h2>Mission</h2>
+      <ul class="mission-list">
+        <li>Gathering in prayer to seek God’s presence, power, and direction.</li>
+        <li>Visiting and caring for individuals and families with love, encouragement, and practical support.</li>
+        <li>Counseling and equipping church leaders for effective and Spirit-led ministry.</li>
+        <li>Offering biblical counseling that brings healing, restoration, and hope.</li>
+        <li>Proclaiming the Gospel faithfully to reach the lost, make disciples, and expand God’s Kingdom.</li>
+        <li><strong>“Let’s make it real! – Cares to Share.”</strong></li>
+      </ul>
+    </div>
+
+  <div class="card">
+    <h2>Vision</h2>
+    <p><strong>Vision:</strong> To see lives and communities transformed through prayer, compassionate care, and the Gospel of Christ, while equipping and strengthening spiritual leaders to impact the world for God’s Kingdom.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>Our Story</h2>
+    <p>More than ten years ago, God placed a vision in the heart of Mr. Osea Batisaresare to establish a ministry that would help people through prayer, counseling, and the Gospel. What began as small gatherings of prayer and personal visitations has grown into a ministry that touches lives, strengthens leaders, and reaches communities with the Good News of Jesus Christ.</p>
+  </div>
+
+ <div class="card">
+  <h2>Value Statement</h2>
+  <ul class="value-list">
+    <li><strong>Prayer</strong> – depending fully on God’s presence and power in all we do.</li>
+    <li><strong>Compassion</strong> – showing Christ’s love through care, encouragement, and service.</li>
+    <li><strong>Integrity</strong> – walking in holiness, accountability, and faithfulness to God’s Word.</li>
+    <li><strong>Servant Leadership</strong> – equipping and supporting leaders to serve with humility and excellence.</li>
+    <li><strong>Evangelism & Discipleship</strong> – boldly proclaiming the Gospel and nurturing believers to maturity in Christ.</li>
+    <li><strong>Community Impact</strong> – being a light that transforms lives, families, and societies for God’s glory.</li>
+  </ul>
+</div>
+</section>
+
+</div>
+
+<!-- ===========================
+     LEADERSHIP TEAM SECTION
+=========================== -->
+
+
+<section class="leadership-section">
+  <h2 class="section-heading">Meet Our Leadership Team</h2>
+  <div class="container leadership-container">
+    <div class="profile-card">
+      <img src="osea.jpg" alt="Mr. Osea Batisaresare">
+      <h3>Mr. Osea Batisaresare</h3>
+      <p class="role">Founder & Visionary</p>
+      <button class="view-more-btn"
+        data-img="osea.jpg"
+        data-name="Mr. Osea Batisaresare"
+        data-role="Founder & Visionary"
+        data-bio="More than ten years ago, God placed a vision in Mr. Osea’s heart to establish Cornerstone Faith Soul Ministry. His obedience and faith laid the foundation for a ministry dedicated to prayer, counseling, visitation, and spreading the Gospel.">
+        View More
+      </button>
+    </div>
+
+    <div class="profile-card">
+      <img src="samisoni.jpg" alt="Samisoni Matarugu">
+      <h3>Missionary Pastor Samisoni S Matarugu</h3>
+      <p class="role">Ministry Director</p>
+      <button class="view-more-btn"
+        data-img="samisoni.jpg"
+        data-name="Missionary Pastor Samisoni S Matarugu"
+        data-role="Ministry Director"
+        data-bio="The Director provides leadership and oversight to the ministry, ensuring that the vision entrusted to the founder continues to grow. With a heart for service and organization, the Director coordinates activities and supports the team.">
+        View More
+      </button>
+    </div>
+
+    <div class="profile-card">
+      <img src="tereti.jpg" alt="Tereti Tamani">
+      <h3>Mr Tereti Tamani</h3>
+      <p class="role">Worship Leader & Secretary</p>
+      <button class="view-more-btn"
+        data-img="tereti.jpg"
+        data-name="Mr Tereti Tamani"
+        data-role="Worship Leader & Secretary"
+        data-bio="Serving as both Worship Leader and Secretary, Mr Tamani brings together the ministry’s heart for worship and administration. Through leading worship, he ushers the community into God’s presence, and through his role as secretary, ensures communication and administration run smoothly.">
+        View More
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Modal for Leadership Profiles -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalName"></h3>
+    <p id="modalRole"></p>
+    <p id="modalBio"></p>
+  </div>
+</div>
+
+ 
+  </div>
+
+  <!-- Modal -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalName"></h3>
+      <p id="modalRole"></p>
+      <p id="modalBio"></p>
+    </div>
+  </div>
+
+  <button onclick="scrollToTop()" id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+    <span class="tooltip">Back to top</span>
+  </button>
+
+  <footer>
+    <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
+  </footer>
+
+  <div class="floating-ticker">
+    <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+  </div>
+
+  <div class="social-container">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <script>
+    // Scroll to top
+    let scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.scrollTop > 200) scrollBtn.classList.add("show");
+      else scrollBtn.classList.remove("show");
+    });
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    // Modal functionality
+    const modal = document.getElementById('profileModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalName = document.getElementById('modalName');
+    const modalRole = document.getElementById('modalRole');
+    const modalBio = document.getElementById('modalBio');
+    const closeBtn = document.querySelector('.modal .close');
+
+    document.querySelectorAll('.view-more-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = btn.getAttribute('data-img');
+        modalName.textContent = btn.getAttribute('data-name');
+        modalRole.textContent = btn.getAttribute('data-role');
+        modalBio.textContent = btn.getAttribute('data-bio');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
+  </script>
+</body>
+</html>

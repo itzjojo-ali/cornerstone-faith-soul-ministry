@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+  
+    .navbar {
+      background-color: #0b0b0d;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover { color: #A2CFFE; }
+    .navbar .brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #A2CFFE;
+    }
+    .navbar img { height: 40px; margin-right: 10px; }
+
+   
+    .hero {
+      background: url('banner2.png') no-repeat center center;
+      background-size: contain;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background-color: #transparent;
+    }
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero-overlay p { font-size: 1.2rem; }
+    .hero-overlay a {
+      background: #A2CFFE;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+/* Contact Cards Grid */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Phone & Email Cards */
+.contact-card {
+  background: rgba(28,28,28,0.85);
+  color: #eee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 250px;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.8);
+}
+
+.contact-card h2 {
+  color: #A2CFFE;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-card a { color: #1e90ff; }
+.contact-card a:hover { text-decoration: underline; }
+
+/* Elegant Button */
+.elegant-button {
+  background: linear-gradient(45deg, #1e90ff, #5aabff);
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  color: #fff;
+  align-self: center;
+  text-align: center;
+}
+
+.elegant-button:hover {
+  background: linear-gradient(45deg, #5aabff, #1e90ff);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* Send Form & Map Sections */
+.form-section, .map-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(28,28,28,0.85);
+  color: #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.form-section h2, .map-section h2 {
+  text-align: center;
+  color: #A2CFFE;
+  margin-bottom: 20px;
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background: #333;
+  color: #eee;
+}
+
+.form-section input::placeholder,
+.form-section textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* stack all cards on smaller screens */
+  }
+}
+
+      .floating-ticker {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #0b0b0d, #1c1c1c, #0b0b0d);
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      padding: 0.6rem 0;
+      z-index: 9999;
+      border-top: 2px solid #A2CFFE;
+      border-bottom: 2px solid #A2CFFE;
+      box-shadow: 0 0 12px rgba(162, 207, 254, 0.7);
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+    .floating-ticker .ticker {
+      display: inline-block;
+      color: #A2CFFE;
+      font-style: italic;
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(162, 207, 254, 0.8);
+      animation: scroll-left 15s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(162, 207, 254, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(162, 207, 254, 1); }
+    }
+
+       #scrollTopBtn {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      font-size: 22px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+      z-index: 999;
+    }
+    #scrollTopBtn.show { opacity: 1; visibility: visible; }
+    #scrollTopBtn:hover { background-color: #5aabff; transform: scale(1.1); }
+    #scrollTopBtn .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    #scrollTopBtn:hover .tooltip { visibility: visible; opacity: 1; }
+
+    @media (max-width: 768px) {
+      .hero-overlay h1 { font-size: 2rem; }
+      .hero-overlay p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="brand">
+      <img src="logo.png" alt="Logo">
+      Cornerstone Faith Soul Ministry
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="support.html">Give / Support</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    
+     
+    </div>
+  <div>
+<section class="container contact-cards">
+
+  <!-- Contact Phone Card -->
+  <div class="card contact-card">
+    <h2>Phone</h2>
+    <ul class="contact-list">
+      <li>Main Line: +020 41421389</li>
+      <li>Customer Service: +679 273-5067</li>
+    </ul>
+    <button class="cta-button elegant-button">Call Us</button>
+  </div>
+
+  <!-- Contact Email Card -->
+  <div class="card contact-card">
+    <h2>Email</h2>
+    <ul class="contact-list">
+      <li>Prayer Requests: <a href="mailto:info@cornerstonefaithstoneministry.com">info@cornerstonefaithstoneministry.com</a></li>
+      <li>Ministry Support: <a href="mailto:support@cornerstonefaithstoneministry.com">support@cornerstonefaithstoneministry.com</a></li>
+    </ul>
+    <button class="cta-button elegant-button">Email Us</button>
+  </div>
+
+</section>
+
+<!-- Send a Message Section -->
+<section class="container form-section">
+  <h2>Send Us a Message</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="cta-button elegant-button">Submit</button>
+  </form>
+</section>
+
+<!-- Map Section -->
+<section class="container map-section">
+  <h2>Our Location</h2>
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.9583837248906!2d178.03381737592605!3d-38.67282447177282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d66784eace9860f%3A0x694b7d56248ec865!2s17%20Ropata%20Street%2C%20Kaiti%2C%20Gisborne%204010%2C%20New%20Zealand!5e0!3m2!1sen!2sfj!4v1759148877000!5m2!1sen!2sfj" 
+    width="100%" 
+    height="450" 
+    style="border:0; border-radius:12px;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+
+  <!-- Scroll to Top Button -->
+  <button onclick="scrollToTop()" id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+    <span class="tooltip">Back to top</span>
+  </button>
+</div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Floating Ticker -->
+  <div class="floating-ticker">
+    <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+  </div>
+
+  <!-- Social Media -->
+  <div class="social-container">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <!-- JS for Scroll to Top -->
+  <script>
+    let scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", function() {
+      if (document.documentElement.scrollTop > 200) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

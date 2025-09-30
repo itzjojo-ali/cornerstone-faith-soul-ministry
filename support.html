@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - Cornerstone Faith Soul Ministry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+
+    .navbar {
+      background-color: #0b0b0d;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover { color: #A2CFFE; }
+    .navbar .brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #A2CFFE;
+    }
+    .navbar img { height: 40px; margin-right: 10px; }
+
+    /* Hero Section */
+    .hero {
+      background: url('banner8.png') no-repeat center center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      color: white;
+    }
+    .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    /* Container + Card */
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+      color: #eee;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #A2CFFE;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Buttons */
+    .cta-button {
+      display: block;
+      width: 220px;
+      margin: 20px auto;
+      padding: 12px;
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .cta-button:hover {
+      background-color: #5aabff;
+      transform: translateY(-2px);
+    }
+    .elegant-button {
+      background: linear-gradient(45deg, #1e90ff, #5aabff);
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-size: 1.1em;
+      padding: 12px 25px;
+      transition: all 0.3s ease;
+    }
+    .elegant-button:hover {
+      background: linear-gradient(45deg, #5aabff, #1e90ff);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .caption-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      font-size: 22px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+    #scrollTopBtn.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    #scrollTopBtn:hover {
+      background-color: #5aabff;
+      transform: scale(1.1);
+    }
+    #scrollTopBtn .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    #scrollTopBtn:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="brand">
+      <img src="logo.png" alt="Logo">
+      Cornerstone Faith Soul Ministry
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="support.html" class="active">Give / Support</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay">
+      <h1>Support Our Mission</h1>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <section>
+    <h2>Give / Support</h2>
+    <p>Your support helps us reach more lives with the Gospel.</p>
+    <a href="https://www.paypal.com/donate" target="_blank" class="cta-button">Donate via PayPal</a>
+    <p><em>Transparency:</em> All donations go towards ministry activities, outreach, and community care.</p>
+  </section>
+
+  <!-- Back Button -->
+  <div class="caption-container">
+    <button class="cta-button elegant-button" onclick="window.history.back()">Back</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Floating Ticker -->
+  <div class="floating-ticker">
+    <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="social-container">
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">
+    ↑
+    <span class="tooltip">Back to Top</span>
+  </button>
+
+  <script>
+    let scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", function() {
+      if (document.documentElement.scrollTop > 200) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
