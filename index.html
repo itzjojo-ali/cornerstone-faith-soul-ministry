@@ -70,6 +70,42 @@
       border-radius: 6px;
       font-weight: 600;
     }
+	
+		.page-heading {
+  text-align: center;
+  margin: 40px 0 20px 0; /* space around heading */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+	
 
     /* Content Sections */
     section {
@@ -262,16 +298,16 @@
     <img src="logo.png" alt="Logo">
     Cornerstone Faith Soul Ministry
   </div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ministries.html">Ministries</a>
-    <a href="resources.html">Resources</a>
-    <a href="events.html">Events</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="contact.html">Contact</a>
-    <a href="support.html">Give / Support</a>
-  </div>
+   <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="active">Donate</a>
+    </div>
 </div>
 
   <!-- Hero -->
@@ -279,15 +315,18 @@
     <div class="hero-overlay">
       <h1>Repent and Believe the Good News</h1>
       <p>Altar of Fire – Daily Livestream</p>
-      <a href="https://facebook.com">Join Livestream</a>
+      <a href="https://www.facebook.com/profile.php?id=61581655405853">Join Livestream</a>
     </div>
   </div>
-
+ <div class="page-banner">
+  <h1>Welcome To Our Page</h1>
+</div>
+  
+  
   <!-- Main Content -->
   <main>
     <section>
-      <div class="card">
-        <h1>Welcome To The Cornerstone Faith Soul Ministry</h1>
+     
         <p>
           Welcome to Cornerstone Faith Soul Ministry — a Christ-centered ministry dedicated to prayer,
           care, and the proclamation of the Gospel. We exist to glorify God by gathering in prayer,
@@ -300,15 +339,19 @@
     </section>
 
     <section>
-      <div class="video-container">
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/Nhk_5c6H-yc?si=LjWMSdzZIXfLYKjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <div class="caption-container">
-        <h3>"Where Faith Ignites Hope and Love."</h3>
-        <p>Click below to view more revival videos</p>
-        <button class="cta-button elegant-button" onclick="goToPage('resources.html')">Explore Ministry</button>
-      </div>
-    </section>
+  <div class="video-container">
+    <video autoplay muted playsinline loop controls poster="banner.png">
+      <source src="intro.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="caption-container">
+    <h3>"Where Faith Ignites Hope and Love."</h3>
+    <p>Click below to view more revival videos</p>
+    <button class="cta-button elegant-button" onclick="goToPage('resources.html')">Explore Ministry</button>
+  </div>
+</section>
+
   </main>
 
   <!-- Scroll-to-top button (only one now) -->
@@ -327,7 +370,7 @@
 
   <!-- Social Media Section -->
   <div class="social-container">
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
     <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
     <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -335,6 +378,10 @@
 
   <!-- JS -->
   <script>
+  
+  function goToPage(url) {
+    window.location.href = url;
+  }
   let scrollBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", function() {

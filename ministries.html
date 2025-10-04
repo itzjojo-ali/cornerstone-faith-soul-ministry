@@ -36,6 +36,268 @@
       border-radius: 6px;
       font-weight: 600;
     }
+		.page-heading {
+  text-align: center;
+  margin: 40px 0 20px 0; /* space around heading */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+	
+	.card {
+  display: block; /* makes the whole card clickable */
+  text-decoration: none; /* removes underline */
+  color: inherit; /* keeps text color normal */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+    .card {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      color: #89CFF0; /* baby blue */
+      margin-bottom: 1rem;
+    }
+    .card p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+	
+	
+	/* Ministries Section */
+.ministry-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.ministry-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Ministry Cards */
+.ministry-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.ministry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.ministry-card h3 {
+  color: #89CFF0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.ministry-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+.ministry-card .view-more-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px; /* oval/terminal shape */
+  background: rgba(255, 255, 255, 0.15); /* transparent glass look */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  
+  color: #89CFF0; /* baby blue text */
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ministry-card .view-more-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+  color: white;
+}
+
+
+.ministry-modal-content {
+  background: rgba(28, 28, 28, 0.7); /* semi-transparent dark */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  margin: 8% auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 650px;
+  text-align: center;
+  color: #f1f1f1;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Headings */
+.ministry-modal-content h3 {
+  color: #89CFF0;
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* Modal container (hidden by default) */
+.ministry-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  overflow: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+/* Modal overlay */
+.ministry-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal content with animation */
+.ministry-modal-content {
+  background: rgba(28, 28, 28, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: 8% auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 650px;
+  text-align: center;
+  color: #f1f1f1;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.2);
+  transform: scale(0.9);
+  opacity: 0;
+  animation: zoomFade 0.4s ease forwards;
+}
+
+/* Fade background */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Zoom pop effect */
+@keyframes zoomFade {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* Paragraphs - more breathing space */
+.ministry-modal-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;   /* increased spacing */
+  letter-spacing: 0.3px;
+  color: #e6e6e6;
+  margin-bottom: 1rem;
+}
+
+/* Close button */
+.ministry-modal-content .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #89CFF0;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+.ministry-modal-content .close:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+	
+	
 	/* Scroll to Top Button */
 #scrollTopBtn {
   position: fixed;         /* always fixed on screen */
@@ -97,24 +359,114 @@
   </div>
   
   <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ministries.html">Ministries</a>
-    <a href="resources.html">Resources</a>
-    <a href="events.html">Events</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="contact.html">Contact</a>
-    <a href="support.html">Give / Support</a>
-  </div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="active">Donate</a>
+    </div>
 </div>
 
 <div class="hero"></div>
-  
-<div class="container">
-  <div class="card"><h2>Prayer Meetings</h2><p>Times and purpose of gathering.</p></div>
-  <div class="card"><h2>Visitation & Care</h2><p>How it works and who it serves.</p></div>
-  <div class="card"><h2>Counseling</h2><p>Support for individuals, families, and leaders.</p></div>
-  <div class="card"><h2>Gospel Outreach</h2><p>Evangelism-focused programs.</p></div>
+
+<section class="ministry-heading">
+  <div class="page-banner">
+  <h1>Our Ministry</h1>
+  <p>Here's What We Offer</p>
+</section>
+
+ <!-- Cards Grid -->
+<!-- Ministries Section -->
+<section class="ministry-section">
+  <div class="ministry-container">
+
+    <!-- Card 1 -->
+    <div class="ministry-card" onclick="openMinistryModal('modal1')">
+      <h3><i class="fas fa-heart"></i> Visitation & Care</h3>
+      <p>How it works and who it serves.</p>
+      <button class="view-more-btn">View More</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="ministry-card" onclick="openMinistryModal('modal2')">
+      <h3><i class="fas fa-praying-hands"></i> Prayer Meetings</h3>
+      <p>Times and purpose of gathering.</p>
+      <button class="view-more-btn">View More</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="ministry-card" onclick="openMinistryModal('modal3')">
+      <h3><i class="fas fa-user-pen"></i> Counseling</h3>
+      <p>Support for individuals, families, and leaders.</p>
+      <button class="view-more-btn">View More</button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="ministry-card" onclick="openMinistryModal('modal4')">
+      <h3><i class="fas fa-cross"></i> Gospel Outreach</h3>
+      <p>Evangelism-focused programs.</p>
+      <button class="view-more-btn">View More</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Ministry Modals -->
+<div id="modal1" class="ministry-modal">
+  <div class="ministry-modal-content">
+    <span class="close" onclick="closeMinistryModal('modal1')">&times;</span>
+    <h3>Visitation & Care</h3>
+    <p>
+      The Visitation & Care Ministry reaches out with compassion to those who are homebound, hospitalized, elderly, or
+      experiencing difficult seasons of life. Through prayer, encouragement, and practical assistance, our team seeks to
+      demonstrate Christ’s love in tangible ways and remind each person that they are valued, supported, and never alone.
+    </p>
+  </div>
+</div>
+
+<div id="modal2" class="ministry-modal">
+  <div class="ministry-modal-content">
+    <span class="close" onclick="closeMinistryModal('modal2')">&times;</span>
+    <h3>Prayer Meetings</h3>
+    <p>
+      Our Prayer Meetings are a vital time of coming together as a church family to seek God’s presence, intercede for our
+      community, and stand in faith for breakthrough. These gatherings provide an atmosphere of unity, worship, and
+      encouragement, where we learn to depend on God and strengthen our walk with Him through corporate prayer.
+    </p>
+  </div>
+</div>
+
+<div id="modal3" class="ministry-modal">
+  <div class="ministry-modal-content">
+    <span class="close" onclick="closeMinistryModal('modal3')">&times;</span>
+    <h3>Counseling</h3>
+    <p>
+      Our Counseling Ministry provides a safe and compassionate space for individuals, couples, and families to find
+      guidance, healing, and encouragement through God’s Word. Whether facing personal struggles, relationship
+      challenges, grief, or life transitions, our trained counselors walk alongside you with prayer, biblical wisdom,
+      and confidential support, helping you experience restoration and hope in Christ.
+    </p>
+  </div>
+</div>
+
+<div id="modal4" class="ministry-modal">
+  <div class="ministry-modal-content">
+    <span class="close" onclick="closeMinistryModal('modal4')">&times;</span>
+    <h3>Gospel Outreach</h3>
+    <p>
+      The Gospel Outreach Ministry is dedicated to sharing the message of Christ beyond the church walls. Through
+      evangelism, community engagement, and service initiatives, we spread the hope of the gospel, reaching both local
+      neighborhoods and wider communities. Our mission is to reflect God’s love and invite others into a life-changing
+      relationship with Jesus.
+    </p>
+  </div>
+</div>
+
+
+
 </div>
 
   
@@ -127,7 +479,7 @@
 </div>
 
 <div class="social-container">
-  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
   <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -145,6 +497,20 @@
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+	
+	
+function openMinistryModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+function closeMinistryModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+window.onclick = function(e) {
+  document.querySelectorAll('.ministry-modal').forEach(modal => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+}
+	
   </script>
 
 </body>

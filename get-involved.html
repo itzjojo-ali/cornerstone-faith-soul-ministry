@@ -6,9 +6,9 @@
   <title>Get Involved - Cornerstone Faith Soul Ministry</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<style>
- .hero {
+  <style>
+    /* Hero */
+    .hero {
       background: url('banner4.png') no-repeat center center;
       background-size: cover;
       height: 70vh;
@@ -17,7 +17,6 @@
       justify-content: center;
       text-align: center;
       position: relative;
-      background-color: #transparent;
     }
     .hero-overlay {
       background: rgba(0,0,0,0.6);
@@ -27,123 +26,220 @@
     }
     .hero-overlay h1 { font-size: 2.5rem; margin-bottom: 1rem; }
     .hero-overlay p { font-size: 1.2rem; }
-    .hero-overlay a {
-      background: #A2CFFE;
-      color: black;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
+
+    /* Container + Cards Grid (same as Events) */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      background-color: #1c1c1c;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      color: #eee;
     }
-	/* Scroll to Top Button */
-#scrollTopBtn {
-  position: fixed;         /* always fixed on screen */
-  right: 30px;             /* 30px from the right edge */
-  bottom: 100px;           /* sits above footer area */
-  font-size: 22px;
-  background-color: #1e90ff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  opacity: 0;              /* start hidden */
-  visibility: hidden;      /* prevents ghost clicks */
-  transition: opacity 0.4s ease, transform 0.3s ease;
-}
-
-#scrollTopBtn.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-#scrollTopBtn:hover {
-  background-color: #5aabff;
-  transform: scale(1.1);
-}
-
-/* Tooltip */
-#scrollTopBtn .tooltip {
-  visibility: hidden;
-  width: 120px;
-  background-color: #333;
-  color: #fff;
+	.page-heading {
   text-align: center;
-  border-radius: 6px;
-  padding: 6px;
-  position: absolute;
-  right: 110%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 0.9em;
-}
-#scrollTopBtn:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
+  margin: 40px 0 20px 0; /* space around heading */
 }
 
-</style>
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+	.card {
+  display: block; /* makes the whole card clickable */
+  text-decoration: none; /* removes underline */
+  color: inherit; /* keeps text color normal */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+    .card {
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      color: #89CFF0; /* baby blue */
+      margin-bottom: 1rem;
+    }
+    .card p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+    /* Scroll to Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      right: 30px;
+      bottom: 100px;
+      font-size: 22px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+    #scrollTopBtn.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    #scrollTopBtn:hover {
+      background-color: #5aabff;
+      transform: scale(1.1);
+    }
+    #scrollTopBtn .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px;
+      position: absolute;
+      right: 110%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    #scrollTopBtn:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
 <body>
   
+<!-- Navbar -->
 <div class="navbar">
   <div class="brand">
     <img src="logo.png" alt="Logo">
     Cornerstone Faith Soul Ministry
   </div>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ministries.html">Ministries</a>
-    <a href="resources.html">Resources</a>
-    <a href="events.html">Events</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="contact.html">Contact</a>
-    <a href="support.html">Give / Support</a>
-  </div>
-</div>
- <!-- Hero -->
-  <div class="hero">
-    
-  </div>
-  
-<div class="container">
-  <div class="card"><h2>Volunteer</h2><p>Join ministry teams to serve.</p></div>
-  <div class="card"><h2>Prayer Groups</h2><p>Participate in intercessory prayer groups.</p></div>
-  <div class="card"><h2>Mentorship</h2><p>Training and discipleship opportunities.</p></div>
+   <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html" class="active">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
 </div>
 
-  
+
+<div class="hero"></div>
+
+<div class="page-banner">
+  <h1>Get Involved</h1>
+</div>
+
+<!-- Cards Grid -->
+<div class="container">
+  <a href="contact.html" class="card">
+    <h2><i class="fas fa-hands-helping"></i> Volunteer</h2>
+    <p>Join ministry teams to serve.</p>
+  </a>
+
+  <a href="contact.html" class="card">
+     <h2><i class="fas fa-praying-hands"></i> Prayer Groups</h2>
+    <p>Participate in intercessory prayer groups.</p>
+  </a>
+
+  <a href="contact.html" class="card">
+    <h2><i class="fas fa-user-graduate"></i> Mentorship</h2>
+    <p>Training and discipleship opportunities.</p>
+  </a>
+</div>
+
+
+<!-- Footer -->
 <footer>
   <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
 </footer>
 
+<!-- Floating Ticker -->
 <div class="floating-ticker">
   <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
 </div>
 
+<!-- Socials -->
 <div class="social-container">
-  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
   <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
 </div>
 
- <script>
-    let scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", function() {
-      if (document.documentElement.scrollTop > 200) {
-        scrollBtn.classList.add("show");
-      } else {
-        scrollBtn.classList.remove("show");
-      }
-    });
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" onclick="scrollToTop()">↑
+  <span class="tooltip">Back to Top</span>
+</button>
+
+<script>
+  let scrollBtn = document.getElementById("scrollTopBtn");
+  window.addEventListener("scroll", function() {
+    if (document.documentElement.scrollTop > 200) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
     }
-  </script>
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>

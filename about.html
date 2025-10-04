@@ -65,6 +65,52 @@
       font-weight: 600;
     }
 	
+		.page-heading {
+  text-align: center;
+  margin: 40px 0 20px 0; /* space around heading */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+	
+	.about-heading {
+  text-align: center;
+  margin: 50px auto 30px auto; /* space from hero + bottom */
+}
+
+.about-heading h1 {
+  color: #89CFF0; /* baby blue */
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+	
 	 section {
       padding: 40px 20px;
       max-width: 1200px;
@@ -339,23 +385,24 @@
       <a href="events.html">Events</a>
       <a href="get-involved.html">Get Involved</a>
       <a href="contact.html">Contact</a>
-      <a href="support.html">Give / Support</a>
+      <a href="donate.html" class="active">Donate</a>
     </div>
   </div>
 
-  <!-- Hero -->
+
   <div class="hero">
     
   </div>
+<div class="page-banner">
+  <h1>About Us</h1>
+</div>
 
-  <!-- Mission & Vision -->
   <main>
-  <!-- ===========================
-     ORIGINAL CARDS
-=========================== -->
-<section class="mission-section">
-  <h2 class="section-heading">Our Mission & Vision</h2>
+
+
+<div class="mission-div">
   <div class="container mission-container">
+
     <div class="card">
       <h2>Mission</h2>
       <ul class="mission-list">
@@ -364,7 +411,7 @@
         <li>Counseling and equipping church leaders for effective and Spirit-led ministry.</li>
         <li>Offering biblical counseling that brings healing, restoration, and hope.</li>
         <li>Proclaiming the Gospel faithfully to reach the lost, make disciples, and expand God’s Kingdom.</li>
-        <li><strong>“Let’s make it real! – Cares to Share.”</strong></li>
+        <strong>“Let’s make it real! – Care to Share.”</strong>
       </ul>
     </div>
 
@@ -403,10 +450,15 @@
 <section class="leadership-section">
   <h2 class="section-heading">Meet Our Leadership Team</h2>
   <div class="container leadership-container">
+    
     <div class="profile-card">
       <img src="osea.jpg" alt="Mr. Osea Batisaresare">
       <h3>Mr. Osea Batisaresare</h3>
       <p class="role">Founder & Visionary</p>
+      <ul class="contact-info">
+        <li>📞 +022 693 1563</li>
+        <li>✉️ hoseabatisaresare@gmail.com</li>
+      </ul>
       <button class="view-more-btn"
         data-img="osea.jpg"
         data-name="Mr. Osea Batisaresare"
@@ -420,6 +472,10 @@
       <img src="samisoni.jpg" alt="Samisoni Matarugu">
       <h3>Missionary Pastor Samisoni S Matarugu</h3>
       <p class="role">Ministry Director</p>
+      <ul class="contact-info">
+        <li>📞 +020 41421389</li>
+        <li>✉️ matarugu8@gmail.com</li>
+      </ul>
       <button class="view-more-btn"
         data-img="samisoni.jpg"
         data-name="Missionary Pastor Samisoni S Matarugu"
@@ -433,6 +489,10 @@
       <img src="tereti.jpg" alt="Tereti Tamani">
       <h3>Mr Tereti Tamani</h3>
       <p class="role">Worship Leader & Secretary</p>
+      <ul class="contact-info">
+        <li>📞 +64 21 705 335</li>
+        <li>✉️ teretitamani@gmail.com</li>
+      </ul>
       <button class="view-more-btn"
         data-img="tereti.jpg"
         data-name="Mr Tereti Tamani"
@@ -441,8 +501,10 @@
         View More
       </button>
     </div>
+
   </div>
 </section>
+
 
 
 
@@ -486,10 +548,10 @@
   </div>
 
   <div class="social-container">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61581655405853"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
 
   <script>

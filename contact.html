@@ -69,6 +69,42 @@
       border-radius: 6px;
       font-weight: 600;
     }
+	
+		.page-heading {
+  text-align: center;
+  margin: 40px 0 20px 0; /* space around heading */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+	
 /* Contact Cards Grid */
 .contact-cards {
   display: grid;
@@ -260,27 +296,33 @@
       <a href="events.html">Events</a>
       <a href="get-involved.html">Get Involved</a>
       <a href="contact.html">Contact</a>
-      <a href="support.html">Give / Support</a>
+      <a href="donate.html" class="active">Donate</a>
     </div>
   </div>
 
   <!-- Hero -->
   <div class="hero">
-    
-     
+       
     </div>
+	
+	<div class="page-banner">
+  <h1>Contact Us</h1>
+  </div>
+  
   <div>
 <section class="container contact-cards">
 
   <!-- Contact Phone Card -->
   <div class="card contact-card">
-    <h2>Phone</h2>
-    <ul class="contact-list">
-      <li>Main Line: +020 41421389</li>
-      <li>Customer Service: +679 273-5067</li>
-    </ul>
-    <button class="cta-button elegant-button">Call Us</button>
-  </div>
+  <h2>Phone</h2>
+  <ul class="contact-list">
+    <li>Main Line:<br><br><ul> +020 41421389</ul></br>
+    <li>Customer Service:<br><br> <ul> +64 21 705 335</ul><ul>+022 693 1563</br>
+  </br>
+  </ul>
+  <button class="cta-button elegant-button">Call Us</button>
+</div>
+
 
   <!-- Contact Email Card -->
   <div class="card contact-card">
@@ -336,13 +378,12 @@
     <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
   </div>
 
-  <!-- Social Media -->
-  <div class="social-container">
-    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
+ <div class="social-container">
+  <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
 
   <!-- JS for Scroll to Top -->
   <script>

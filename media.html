@@ -16,7 +16,69 @@
     .hero { background:url('banner7.png') no-repeat center center; background-size:cover; height:70vh; display:flex; align-items:center; justify-content:center; }
     
     section { padding:40px 20px; max-width:1200px; margin:20px auto; background:#1c1c1c; border-radius:10px; box-shadow:0 2px 4px rgba(0,0,0,0.6); }
+	
     h2 { font-size:2rem; margin-bottom:20px; text-align:center; color:#A2CFFE; }
+	
+	.page-heading {
+  text-align: center;
+  margin: 40px 0 20px 0; /* space around heading */
+}
+
+.page-heading h1 {
+  font-size: 2.5rem;
+  color: #89CFF0;  /* Baby blue */
+  font-weight: bold;
+}
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.card {
+  display: block; /* since it's now an <a> */
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+ section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #1c1c1c; /* charcoal dark instead of white */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    color: #eee;
+}
+
     
     .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px; }
     .gallery-card { cursor:pointer; overflow:hidden; border-radius:12px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
@@ -78,18 +140,22 @@
 <div class="navbar">
   <div class="brand"><img src="logo.png" alt="Logo">Cornerstone Faith Soul Ministry</div>
   <div>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ministries.html">Ministries</a>
-    <a href="resources.html" class="active">Resources</a>
-    <a href="events.html">Events</a>
-    <a href="get-involved.html">Get Involved</a>
-    <a href="contact.html">Contact</a>
-    <a href="support.html">Give / Support</a>
-  </div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="resources.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="active">Donate</a>
+    </div>
 </div>
 
 <div class="hero"></div>
+<div class="page-banner">
+  <h1>Our Media</h1>
+</div>
+
 
 <!-- Video Modal -->
 <div id="videoModal" class="modal">
@@ -179,10 +245,10 @@
   "Your word is a lamp to my feet and a light to my path." – Psalm 119:105
 </div>
 <div class="social-container">
-  <a href="#"><i class="fab fa-facebook-f"></i></a>
-  <a href="#"><i class="fab fa-instagram"></i></a>
-  <a href="#"><i class="fab fa-twitter"></i></a>
-  <a href="#"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
 </div>
 
 

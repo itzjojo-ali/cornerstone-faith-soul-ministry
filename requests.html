@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - Cornerstone Faith Soul Ministry</title>
+  <title>Prayer Requests- Cornerstone Faith Soul Ministry</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-
-<body>
-<style>
-/* Card style (same as resources page) */
+  <style>
+   /* Card style (same as resources page) */
 .card {
   display: block; /* clickable */
   text-decoration: none;
@@ -120,43 +117,10 @@ p {
   margin-bottom: 20px;
 }
 
-	.page-heading {
-  text-align: center;
-  margin: 40px 0 20px 0; /* space around heading */
-}
 
-.page-heading h1 {
-  font-size: 2.5rem;
-  color: #89CFF0;  /* Baby blue */
-  font-weight: bold;
-}
-
-.page-banner {
-  margin: 30px auto; /* space below hero */
-  padding: 15px 40px;
-  max-width: 600px;
-  text-align: center;
-  
-  /* Elegant oval/terminal shape */
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.15); /* transparent effect */
-  backdrop-filter: blur(8px); /* glass/terminal style */
-  -webkit-backdrop-filter: blur(8px); /* for Safari */
-  
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.page-banner h1 {
-  font-size: 2rem;
-  margin: 0;
-  color: #89CFF0; /* Baby blue */
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 
 .hero {
-  background: url('banner9.png') no-repeat center center;
+  background: url('banner6.png') no-repeat center center;
   background-size: cover;
   height: 70vh;
   display: flex;
@@ -242,10 +206,102 @@ p {
   visibility: visible;
   opacity: 1;
 }
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: #eee;
+    }
+    .form-container h2 {
+      color: #89CFF0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background: #222;
+      color: #eee;
+      font-size: 1em;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #5aabff;
+      box-shadow: 0 0 8px rgba(90,171,255,0.6);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .form-actions button {
+      margin: 0 10px;
+    }
+	   .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: #eee;
+    }
+    .form-container h2 {
+      color: #89CFF0;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; font-weight: bold; margin-bottom: 6px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background: #222;
+      color: #eee;
+      font-size: 1em;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #5aabff;
+      box-shadow: 0 0 8px rgba(90,171,255,0.6);
+    }
+    textarea { resize: vertical; min-height: 100px; }
 
-
-
-</style>
+    /* Side by side buttons */
+    .form-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .form-actions button {
+      flex: 1 1 200px;
+      max-width: 220px;
+      padding: 15px 30px;
+    }
+ 
+  </style>
+</head>
+<body>
 
 <!-- Navbar -->
 <div class="navbar">
@@ -265,53 +321,69 @@ p {
     </div>
 </div>
 
-
+<!-- Hero Banner -->
 <div class="hero">
-     </div>
-	 <div class="page-banner">
-  <h1>Upcoming Events</h1>
-  <p>Stay updated with our latest gatherings, services, and ministries.</p>
+ 
+  </div>
+
+ 
+</head>
+<body>
+<!-- Prayer Request Form -->
+<div class="form-container">
+  <h2>Prayer Request Form</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" placeholder="+679 123 4567" required>
+    </div>
+
+    <div class="form-group">
+      <label for="prayer-type">Prayer Type *</label>
+      <select id="prayer-type" name="prayer-type" required>
+        <option value="">-- Choose a Prayer Type --</option>
+        <option value="personal">Personal</option>
+        <option value="family">Family</option>
+        <option value="health">Health</option>
+        <option value="guidance">Guidance / Direction</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="prayer-request">Prayer Request *</label>
+      <textarea id="prayer-request" name="prayer-request" placeholder="Write your prayer request here..." required></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="cta-button elegant-button">Submit Prayer</button>
+      <button type="button" class="cta-button elegant-button" onclick="window.history.back()">Back</button>
+    </div>
+  </form>
 </div>
-
-<!-- Cards -->
-<div class="container">
-  <!-- Event Calendar -->
-  <a href="calendar.html" class="card">
-    <h2>Event Calendar</h2>
-    <p>View all upcoming events with dates and details.</p>
-  </a>
-
-  
-  <!-- Highlights -->
-  <a href="highlights.html" class="card">
-    <h2>Highlights</h2>
-    <p>Read recaps of past events and testimonies.</p>
-  </a>
-
-
-<!-- Prayer Requests  -->
-  <a href="requests.html" class="card">
-    <h2>Share Your Prayer Requests</h2>
-    <p>Be part of what God is doing through our upcoming gatherings</p>
-  </a>
-</div>
-
-<!-- Back Button -->
-<div style="text-align:center; margin: 30px;">
-  <button class="cta-button elegant-button" onclick="window.history.back()">Back</button>
-</div>
+    
 
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
 </footer>
 
-<!-- Floating Ticker -->
-<div class="floating-ticker">
-  <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
-</div>
+<!-- Scroll to Top -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  ↑
+  <span class="tooltip">Back to Top</span>
+</button>
 
-<!-- Socials -->
 <div class="social-container">
   <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -320,8 +392,18 @@ p {
 </div>
 
 <script>
-  function goToPage(url) {
-    window.location.href = url;
+  // Scroll to top logic
+  let scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  };
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 </script>
 

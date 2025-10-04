@@ -3,14 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - Cornerstone Faith Soul Ministry</title>
+  <title>Event Highlights - Cornerstone Faith Soul Ministry</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-
-<body>
-<style>
-/* Card style (same as resources page) */
+  <style>
+   /* Card style (same as resources page) */
 .card {
   display: block; /* clickable */
   text-decoration: none;
@@ -48,6 +45,31 @@
   font-size: 2.8rem;
   font-weight: 700;
 }
+
+.page-banner {
+  margin: 30px auto; /* space below hero */
+  padding: 15px 40px;
+  max-width: 600px;
+  text-align: center;
+  
+  /* Elegant oval/terminal shape */
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15); /* transparent effect */
+  backdrop-filter: blur(8px); /* glass/terminal style */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.page-banner h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #89CFF0; /* Baby blue */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 	
 	 section {
       padding: 40px 20px;
@@ -120,43 +142,8 @@ p {
   margin-bottom: 20px;
 }
 
-	.page-heading {
-  text-align: center;
-  margin: 40px 0 20px 0; /* space around heading */
-}
-
-.page-heading h1 {
-  font-size: 2.5rem;
-  color: #89CFF0;  /* Baby blue */
-  font-weight: bold;
-}
-
-.page-banner {
-  margin: 30px auto; /* space below hero */
-  padding: 15px 40px;
-  max-width: 600px;
-  text-align: center;
-  
-  /* Elegant oval/terminal shape */
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.15); /* transparent effect */
-  backdrop-filter: blur(8px); /* glass/terminal style */
-  -webkit-backdrop-filter: blur(8px); /* for Safari */
-  
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.page-banner h1 {
-  font-size: 2rem;
-  margin: 0;
-  color: #89CFF0; /* Baby blue */
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
 .hero {
-  background: url('banner9.png') no-repeat center center;
+  background: url('banner12.png') no-repeat center center;
   background-size: cover;
   height: 70vh;
   display: flex;
@@ -242,10 +229,9 @@ p {
   visibility: visible;
   opacity: 1;
 }
-
-
-
-</style>
+  </style>
+</head>
+<body>
 
 <!-- Navbar -->
 <div class="navbar">
@@ -265,39 +251,67 @@ p {
     </div>
 </div>
 
-
 <div class="hero">
-     </div>
-	 <div class="page-banner">
-  <h1>Upcoming Events</h1>
-  <p>Stay updated with our latest gatherings, services, and ministries.</p>
+ 
 </div>
 
-<!-- Cards -->
-<div class="container">
-  <!-- Event Calendar -->
-  <a href="calendar.html" class="card">
-    <h2>Event Calendar</h2>
-    <p>View all upcoming events with dates and details.</p>
-  </a>
-
-  
-  <!-- Highlights -->
-  <a href="highlights.html" class="card">
-    <h2>Highlights</h2>
-    <p>Read recaps of past events and testimonies.</p>
-  </a>
-
-
-<!-- Prayer Requests  -->
-  <a href="requests.html" class="card">
-    <h2>Share Your Prayer Requests</h2>
-    <p>Be part of what God is doing through our upcoming gatherings</p>
-  </a>
+<div class="page-banner">
+  <h1>Highlights</h1>
 </div>
+
+
+  <div class="container">
+    <div class="card">
+      <h2>Youth Conference 2025</h2>
+      <p>A weekend of worship, teaching, and fellowship for youth and young adults.</p>
+    </div>
+    <div class="card">
+      <h2>Community Outreach</h2>
+      <p>Serving meals and providing care packages for local families.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Past Events Section -->
+<section>
+  <div class="Upcoming-Events-heading">
+    <h2>Past Highlights</h2>
+  </div>
+  <div class="container">
+    <div class="card">
+      <h2>Christmas Service</h2>
+      <p>A joyful evening of carols, messages, and fellowship.</p>
+    </div>
+    <div class="card">
+      <h2>Easter Celebration</h2>
+      <p>Resurrection Sunday service with drama, choir, and sermon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Photo Gallery Section -->
+<section>
+  <div class="Upcoming-Events-heading">
+    <h2>Photo Memories</h2>
+  </div>
+  <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+    <div class="card">
+      <img src="event1.jpg" alt="Event 1" style="width:100%; border-radius:10px;">
+      <p>Youth worship night</p>
+    </div>
+    <div class="card">
+      <img src="event2.jpg" alt="Event 2" style="width:100%; border-radius:10px;">
+      <p>Community outreach</p>
+    </div>
+    <div class="card">
+      <img src="event3.jpg" alt="Event 3" style="width:100%; border-radius:10px;">
+      <p>Christmas service</p>
+    </div>
+  </div>
+</section>
 
 <!-- Back Button -->
-<div style="text-align:center; margin: 30px;">
+<div class="caption-container">
   <button class="cta-button elegant-button" onclick="window.history.back()">Back</button>
 </div>
 
@@ -306,22 +320,30 @@ p {
   <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
 </footer>
 
-<!-- Floating Ticker -->
-<div class="floating-ticker">
-  <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
-</div>
-
-<!-- Socials -->
+<!-- Scroll to Top -->
+<button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+  ↑
+  <span class="tooltip">Back to Top</span>
+</button>
 <div class="social-container">
   <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
   <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
 </div>
-
 <script>
-  function goToPage(url) {
-    window.location.href = url;
+  // Scroll to top logic
+  let scrollBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
+    }
+  };
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
 </script>
 

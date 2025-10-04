@@ -3,51 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - Cornerstone Faith Soul Ministry</title>
+  <title>Event Calendar - Cornerstone Faith Soul Ministry</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
-<body>
 <style>
-/* Card style (same as resources page) */
-.card {
-  display: block; /* clickable */
-  text-decoration: none;
-  color: inherit;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: #222; /* dark style */
-}
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #1c1c1c;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.7);
-  color: #eee;
-}
-
-.Upcoming Events-heading {
+.Events Calendar-heading {
   text-align: center;
   margin: 50px auto 30px auto; /* space from hero + bottom */
 }
 
-.Upcoming Events-heading h1 {
+.Events Calendar-heading h1 {
   color: #89CFF0; /* baby blue */
   font-size: 2.8rem;
   font-weight: 700;
 }
+
 	
 	 section {
       padding: 40px 20px;
@@ -70,7 +42,7 @@
     .card p { line-height: 1.6; }
 
 
-h2, h3 {
+h1, h2 {
   font-size: 2em;
   margin-bottom: 10px;
   text-align: center;
@@ -120,43 +92,8 @@ p {
   margin-bottom: 20px;
 }
 
-	.page-heading {
-  text-align: center;
-  margin: 40px 0 20px 0; /* space around heading */
-}
-
-.page-heading h1 {
-  font-size: 2.5rem;
-  color: #89CFF0;  /* Baby blue */
-  font-weight: bold;
-}
-
-.page-banner {
-  margin: 30px auto; /* space below hero */
-  padding: 15px 40px;
-  max-width: 600px;
-  text-align: center;
-  
-  /* Elegant oval/terminal shape */
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.15); /* transparent effect */
-  backdrop-filter: blur(8px); /* glass/terminal style */
-  -webkit-backdrop-filter: blur(8px); /* for Safari */
-  
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.page-banner h1 {
-  font-size: 2rem;
-  margin: 0;
-  color: #89CFF0; /* Baby blue */
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
 .hero {
-  background: url('banner9.png') no-repeat center center;
+  background: url('banner11.png') no-repeat center center;
   background-size: cover;
   height: 70vh;
   display: flex;
@@ -244,10 +181,10 @@ p {
 }
 
 
-
 </style>
 
-<!-- Navbar -->
+<body>
+
 <div class="navbar">
   <div class="brand">
     <img src="logo.png" alt="Logo">
@@ -265,53 +202,39 @@ p {
     </div>
 </div>
 
-
 <div class="hero">
-     </div>
-	 <div class="page-banner">
-  <h1>Upcoming Events</h1>
-  <p>Stay updated with our latest gatherings, services, and ministries.</p>
+      </div>
+	  
+	  
 </div>
+<section class="Event Calendar">
+  <h2>Event Calendar</h2>
+   <p>Stay updated with all upcoming ministry events and services.</p>
+</section>
 
-<!-- Cards -->
-<div class="container">
-  <!-- Event Calendar -->
-  <a href="calendar.html" class="card">
-    <h2>Event Calendar</h2>
-    <p>View all upcoming events with dates and details.</p>
-  </a>
-
-  
-  <!-- Highlights -->
-  <a href="highlights.html" class="card">
-    <h2>Highlights</h2>
-    <p>Read recaps of past events and testimonies.</p>
-  </a>
-
-
-<!-- Prayer Requests  -->
-  <a href="requests.html" class="card">
-    <h2>Share Your Prayer Requests</h2>
-    <p>Be part of what God is doing through our upcoming gatherings</p>
-  </a>
+<section class="Upcoming Events">
+  <h2> Upcoming Events</h2>
+  <p>Here you can display your event timetable or embedded Google Calendar.</p>
 </div>
+</section>
 
-<!-- Back Button -->
+<section class="Prayer Meeting Timetable">
+  <h2>Prayer Meeting Timetable</h2>
+   <p>Times and purpose of gathering.</p>
+</section>
+
 <div style="text-align:center; margin: 30px;">
   <button class="cta-button elegant-button" onclick="window.history.back()">Back</button>
 </div>
 
-<!-- Footer -->
 <footer>
   <p>&copy; 2025 Cornerstone Faith Soul Ministry. All Rights Reserved.</p>
 </footer>
 
-<!-- Floating Ticker -->
 <div class="floating-ticker">
-  <span class="ticker">"Your word is a lamp to my feet and a light to my path." – Psalm 119:105</span>
+  <span class="ticker">"For where two or three gather in my name, there am I with them." – Matthew 18:20</span>
 </div>
 
-<!-- Socials -->
 <div class="social-container">
   <a href="https://www.facebook.com/profile.php?id=61581655405853" target="_blank"><i class="fab fa-facebook-f"></i></a>
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -320,10 +243,17 @@ p {
 </div>
 
 <script>
-  function goToPage(url) {
-    window.location.href = url;
-  }
-</script>
-
+    let scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", function() {
+      if (document.documentElement.scrollTop > 200) {
+        scrollBtn.classList.add("show");
+      } else {
+        scrollBtn.classList.remove("show");
+      }
+    });
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
